@@ -79,7 +79,7 @@ namespace WakeLocks
 
                 foreach (var request in device.WakeRequests)
                 {
-                    yield return new ToolStripLabel($" - {request.FriendlyName}");
+                    yield return new ToolStripButton($" - {request.FriendlyName}", null, (sender, e) => request.Kill());
                 }
             }
         }
